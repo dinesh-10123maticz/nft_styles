@@ -1,0 +1,480 @@
+{
+    "version": "0.1.0",
+    "name": "nft_marketplace",
+    "instructions": [
+        {
+            "name": "initializeAccount",
+            "accounts": [
+                {
+                    "name": "owneraccount",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "payer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": []
+        },
+        {
+            "name": "updateOwner",
+            "accounts": [
+                {
+                    "name": "ownerAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": false,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "newOwner",
+                    "type": "publicKey"
+                }
+            ]
+        },
+        {
+            "name": "updateFee",
+            "accounts": [
+                {
+                    "name": "ownerAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": false,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "sellerFee",
+                    "type": "u16"
+                },
+                {
+                    "name": "buyerFee",
+                    "type": "u16"
+                }
+            ]
+        },
+        {
+            "name": "mintNft",
+            "accounts": [
+                {
+                    "name": "payer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "metadataAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "editionAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "mintAccount",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "associatedTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenMetadataProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "associatedTokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "rent",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "nftMetadata",
+                    "isMut": true,
+                    "isSigner": true
+                }
+            ],
+            "args": [
+                {
+                    "name": "nftName",
+                    "type": "string"
+                },
+                {
+                    "name": "nftSymbol",
+                    "type": "string"
+                },
+                {
+                    "name": "nftUri",
+                    "type": "string"
+                },
+                {
+                    "name": "count",
+                    "type": "u64"
+                },
+                {
+                    "name": "royalty",
+                    "type": "u16"
+                }
+            ]
+        },
+        {
+            "name": "buyNft",
+            "accounts": [
+                {
+                    "name": "buyer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "seller",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "sellerNftAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "buyerNftAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "delegate",
+                    "isMut": false,
+                    "isSigner": true
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "metaAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "creator",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "ownerAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "owner",
+                    "isMut": true,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "nftPrice",
+                    "type": "u64"
+                },
+                {
+                    "name": "price",
+                    "type": "u64"
+                },
+                {
+                    "name": "count",
+                    "type": "u64"
+                }
+            ]
+        },
+        {
+            "name": "buyNftWithToken",
+            "accounts": [
+                {
+                    "name": "buyer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "seller",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "sellerNftAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "buyerNftAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "sellerTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "buyerTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "delegate",
+                    "isMut": false,
+                    "isSigner": true
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "mint",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "ownerAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "ownerTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "metaAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "creatorTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "nftPrice",
+                    "type": "u64"
+                },
+                {
+                    "name": "price",
+                    "type": "u64"
+                },
+                {
+                    "name": "count",
+                    "type": "u64"
+                }
+            ]
+        },
+        {
+            "name": "acceptBid",
+            "accounts": [
+                {
+                    "name": "buyer",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "seller",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "sellerNftAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "buyerNftAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "sellerTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "buyerTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "delegate",
+                    "isMut": false,
+                    "isSigner": true
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "mint",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "ownerAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "ownerTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "metaAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "creatorTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "nftPrice",
+                    "type": "u64"
+                },
+                {
+                    "name": "price",
+                    "type": "u64"
+                },
+                {
+                    "name": "count",
+                    "type": "u64"
+                }
+            ]
+        }
+    ],
+    "accounts": [
+        {
+            "name": "AccountData",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "owner",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "sellerFee",
+                        "type": "u16"
+                    },
+                    {
+                        "name": "buyerFee",
+                        "type": "u16"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "NftMetadata",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "symbol",
+                        "type": "string"
+                    },
+                    {
+                        "name": "uri",
+                        "type": "string"
+                    },
+                    {
+                        "name": "sellerFeeBasisPoints",
+                        "type": "u16"
+                    },
+                    {
+                        "name": "creator",
+                        "type": "publicKey"
+                    }
+                ]
+            }
+        }
+    ],
+    "errors": [
+        {
+            "code": 6000,
+            "name": "Unauthorized",
+            "msg": "Unauthorized access"
+        }
+    ],
+    "metadata": {
+        "address": "Ew1vCEMXzG986WsavtEgdXDt9D4nRYUNStwojQ1tMjss"
+    },
+    "owner": {
+        "address": "6h1B7ZSkGP8a4SxQFaKDh1YGExHCk2ZdWNynSUK5QiQn"
+    }
+}
