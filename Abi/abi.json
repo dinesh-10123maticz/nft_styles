@@ -24,6 +24,58 @@
             "args": []
         },
         {
+            "name": "addToken",
+            "accounts": [
+                {
+                    "name": "owneraccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "newToken",
+                    "type": "publicKey"
+                }
+            ]
+        },
+        {
+            "name": "removeToken",
+            "accounts": [
+                {
+                    "name": "owneraccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "removeToken",
+                    "type": "publicKey"
+                }
+            ]
+        },
+        {
             "name": "updateOwner",
             "accounts": [
                 {
@@ -431,6 +483,12 @@
                     {
                         "name": "buyerFee",
                         "type": "u16"
+                    },
+                    {
+                        "name": "tokens",
+                        "type": {
+                            "vec": "publicKey"
+                        }
                     }
                 ]
             }
@@ -469,12 +527,27 @@
             "code": 6000,
             "name": "Unauthorized",
             "msg": "Unauthorized access"
+        },
+        {
+            "code": 6001,
+            "name": "RecipientNotWhitelisted",
+            "msg": "The Mint Address is not in the whitelist."
+        },
+        {
+            "code": 6002,
+            "name": "AlredyWhitelisted",
+            "msg": "The Mint Address Already Whitelisted"
+        },
+        {
+            "code": 6003,
+            "name": "TokenNotFound",
+            "msg": "The Mint Address Not Found"
         }
     ],
     "metadata": {
-        "address": "Ew1vCEMXzG986WsavtEgdXDt9D4nRYUNStwojQ1tMjss"
+        "address": "iVyTkDhy8Qd6YDFp2qxADtkwcHRWuFbj7yoENQbP9vG"
     },
     "owner": {
-        "address": "6h1B7ZSkGP8a4SxQFaKDh1YGExHCk2ZdWNynSUK5QiQn"
+        "address": "3zYbnQWQFf1XGfthRNjpZ6SsYowo31HPrtVdcYeMBD4L"
     }
 }
