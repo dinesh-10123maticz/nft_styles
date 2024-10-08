@@ -73,7 +73,7 @@ export default function Profile({params}) {
             alt="collection avatar"
             className="rounded-xl border-[5px] border-white dark:border-jacarta-600"
           />
-          {userData?.verified && <div
+          {userData?.isVerified && <div
             className="absolute -right-3 bottom-0 flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-green dark:border-jacarta-600"
             data-tippy-content="Verified Collection"
           >

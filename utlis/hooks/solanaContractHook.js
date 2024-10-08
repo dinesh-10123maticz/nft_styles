@@ -467,7 +467,7 @@ export default function Usewallet() {
           nftMint.toString(),
           buyer.toString()
         )
-      const ownerPubkey = new PublicKey(owner);
+      const ownerPubkey = new PublicKey(owneraddress);
       const metaData = await program.account.nftMetadata.fetch(nftMetaDataAddress)
       const creator = metaData.creator;
       let transaction = await program.methods
