@@ -33,6 +33,8 @@ export default function Header1() {
   const Contract = SolanaContractHook()
   const dispatch = useDispatch();
   const UserPayload = useSelector((state) => state.LoginReducer.User.payload);
+  const token = useSelector((state) => state.LoginReducer.User.token);
+
   const { web3, accountAddress, coinBalance } = useSelector(
     (state) => state.LoginReducer.AccountDetails
   );

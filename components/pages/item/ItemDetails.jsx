@@ -631,7 +631,9 @@ export default function ItemDetails({ params }) {
                     <>{Tokens_Detail?.NFTName}</>
                   )}
                   {/* </Link> */}
-                  <span
+                  {
+                    userDate?.isVerified && 
+                    <span
                     className="inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-green dark:border-jacarta-600"
                     data-tippy-content="Verified Collection"
                   >
@@ -646,6 +648,8 @@ export default function ItemDetails({ params }) {
                       <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                     </svg>
                   </span>
+                  
+                  }
                 </div>
 
                 {/* Likes / Actions */}
@@ -831,7 +835,7 @@ export default function ItemDetails({ params }) {
                         className="rounded-2lg"
                         loading="lazy"
                       />
-                      <div
+                      {Tokens_Detail?.Creator_isVerified && <div
                         className="absolute -right-3 top-[60%] flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-green dark:border-jacarta-600"
                         data-tippy-content="Verified Collection"
                       >
@@ -845,7 +849,7 @@ export default function ItemDetails({ params }) {
                           <path fill="none" d="M0 0h24v24H0z"></path>
                           <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                         </svg>
-                      </div>
+                      </div>}
                     </Link>
                   </figure>
                   <div className="flex flex-col justify-center">
@@ -888,7 +892,7 @@ export default function ItemDetails({ params }) {
                         className="rounded-2lg"
                         loading="lazy"
                       />
-                      <div
+                      {Tokens_Detail?.Current_Owner?.[0]?.isVerified && <div
                         className="absolute -right-3 top-[60%] flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-green dark:border-jacarta-600"
                         data-tippy-content="Verified Collection"
                       >
@@ -902,7 +906,7 @@ export default function ItemDetails({ params }) {
                           <path fill="none" d="M0 0h24v24H0z"></path>
                           <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
                         </svg>
-                      </div>
+                      </div>}
                     </Link>
                   </figure>
                   <div className="flex flex-col justify-center">
