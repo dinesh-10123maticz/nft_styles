@@ -83,13 +83,7 @@ export default function useContractProviderHook() {
     }
 
     const SetApproveStatus = async (data, Addr) => {
-        console.log("SETAPPROVETRADE", network[Network]?.tradeContract, accountAddress);
-        console.log("sdefsedffe", data, Addr);
         try {
-
-
-// .send method
-
             var ConnectContract = await contrat_connection(data == 'Single' ? ERC721 : ERC1155, Addr)
             var contractobj = await
                 ConnectContract

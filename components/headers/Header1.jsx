@@ -644,7 +644,10 @@ export default function Header1() {
             </nav>
 
             {/* Mobile Connect Wallet / Socials */}
-            <div className="mt-10 w-full lg:hidden">
+            <div  data-bs-toggle="modal"
+                    data-bs-target="#ConnectWalletModal" 
+                    className="mt-10 w-full lg:hidden"
+                    >
               {/* <MetamarkComponent> */}
               <span className="  js-wallet block w-full rounded-full bg-accent py-3 px-8 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark">
                 Connect Wallet
